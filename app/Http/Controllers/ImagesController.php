@@ -53,7 +53,7 @@ class ImagesController extends Controller
         ]);
     
         // Redirect to the index route with a success message
-        return Redirect::route('album.index', $request->album_id)->with('status', 'Updated Successfully');
+        return Redirect::route('album.index', $request->album_id)->with('status', 'Create Successfully');
 
     }
 

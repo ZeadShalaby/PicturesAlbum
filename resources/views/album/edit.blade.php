@@ -61,8 +61,8 @@
             <div>
                 <div class="c-form__group">
                     <label class="c-form__label" for="username">
-                        <input type="text" id="username" class="c-form__input" placeholder=" " pattern="[^\s]+"
-                            required name="name" value="{{ $album->name }}" />
+                        <input type="text" id="username" class="c-form__input" placeholder=" " required
+                            name="name" value="{{ $album->name }}" />
 
                         <label class="c-form__next" for="finish" role="button">
 

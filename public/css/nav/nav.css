@@ -134,3 +134,12 @@ input[type="checkbox"] {
         background-color: #4c9e9e;
     }
 }
+
+.alert-success {
+    background-color: #a8cb9c; /* Lighter green background */
+    border-color: #d0e0c6; /* Lighter green border */
+    color: #3c763d; /* Darker green text */
+    font-weight: bold; /* Bold text */
+    padding: 20px; /* Increase padding */
+    border-radius: 5px; /* Rounded corners */
+}
