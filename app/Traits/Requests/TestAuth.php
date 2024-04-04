@@ -31,10 +31,16 @@ trait TestAuth
     ];
     }
     
-    // todo rules of store posts 
+    // todo rules of store Album 
     protected function rulesAlbum(){
       return [
-        'user_id' => 'required|exists:users,id",',
+        'name'    => 'required|string|min:1|max:30' 
+    ];
+    }
+
+    // todo rules of Update Album 
+    protected function rulesUpdateAlbum(){
+      return [
         'name'    => 'required|string|min:4|max:30' 
     ];
     }
@@ -44,13 +50,25 @@ trait TestAuth
       return [
         'album_id' => 'required|exists:albums,id",',
         'name'     => 'required|string|min:4|max:30',
-        'file'     => 'required|file|max:30000|mimes:doc,docx,pdf,jpeg,png,jpg',
+        'path'     => 'required|file|max:30000|mimes:doc,docx,pdf,jpeg,png,jpg',
     ];
     }
 
-   
+        // todo rules of destroy album 
+        protected function rulesalbumdestroy(){
+          return [
+            'album_id' => 'required|exists:albums,id",',
+          ];
+        }
+     // todo rules of search Album
+     protected function rulesAlbumSearch(){
+      return [
+        'query'     => 'required|string|min:1|max:30',
+    ];
+    }
 
-   
+
+  
    // todo rules update users
    protected function rulesUpdateUsers(){
     return  [

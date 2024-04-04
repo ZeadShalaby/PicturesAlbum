@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
         ->create();
 
         //// todo add albums ////
-        $albums = Album::factory()->count(10)->create();
+        $albums = Album::factory()->count(9)->create();
 
         //// todo add albums ////
         $albums = Image::factory()->count(30)->create();

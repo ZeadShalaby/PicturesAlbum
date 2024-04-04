@@ -21,8 +21,17 @@ class Album extends Model
         'name'
     ];
 
-   
+    
+   /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'updated_at',
+    ];
 
+    
     public function user()
     {
         return $this->belongsTo(User::class , 'user_id');

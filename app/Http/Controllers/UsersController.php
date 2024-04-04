@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
+use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('album_id')->unsigned();
             $table->index('album_id');
-            $table->string("name")->unique();
+            $table->string("name");
             $table->string("path");
             $table->timestamps();
         });

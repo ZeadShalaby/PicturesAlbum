@@ -21,9 +21,23 @@ class Image extends Model
         'path'
     ];
 
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'updated_at',
+    ];
+
     public function album()
     {
         return $this->belongsTo(Album::class , 'album_id');
+    }
+
+    public function pictures()
+    {
+        return $this->hasMany(Image::class , "album_id");
     }
 
     // todo delete all image but still album
