@@ -22,6 +22,10 @@ class AlbumsController extends Controller
     {
         //
         $albums = Album::with('user')->get();
+        $albums->map(function ($album) {
+            $album->fullname = $album->user->firstname.$album->user->lastname;
+            return $album;
+        });
         return view('album.index',['albums' => $albums]);
 
     }

@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        //// todo add one customer ////
+        //// todo add one Users ////
         $defUsers = User::factory()->create([  
             'firstname' => 'user',
             'lastname' => 'album',
@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
         //// todo add albums ////
         $albums = Album::factory()->count(9)->create();
 
-        //// todo add albums ////
+        //// todo add images ////
         $albums = Image::factory()->count(30)->create();
     }
 }

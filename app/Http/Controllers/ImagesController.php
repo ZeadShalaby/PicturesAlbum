@@ -34,7 +34,8 @@ class ImagesController extends Controller
     public function create(Request $request)
     {
         //
-        return view('image.create')->with('items', $request->id);;
+        $album = Album::find($request->id);
+        return view('image.create')->with('album', $album);
     }
 
     /**

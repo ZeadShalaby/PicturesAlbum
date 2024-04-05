@@ -19,8 +19,8 @@ class UserFactory extends Factory
     {
         
         return [
-            'firstname' => fake()->name(),
-            'lastname' => fake()->name(),
+            'firstname' => Str::limit(fake()->name(), 7),
+            'lastname' => Str::limit(fake()->name(), 7),
             'email' => fake()->unique()->safeEmail(),
             'password' => 'user', //? password
             'photo' => 'male.png',

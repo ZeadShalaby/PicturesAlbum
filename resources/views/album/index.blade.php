@@ -72,7 +72,7 @@
                         <div class="mg">
                             <div class="clr"></div>
                             <div class="group">
-                                <span>membergroup</span>
+                                <span>{{ $item->fullname }}</span>
                             </div>
                         </div>
                         <div class="av"

@@ -64,8 +64,11 @@
         <br>
         <input type="text" placeholder="Enter your name" name="name" required>
         <br><br>
-        <input type="text" name="album_id" value="{{ $items }}"readonly>
-
+        <input type="text" name="album_id" value="{{ $album->id }}" readonly hidden>
+        <span>
+            <span style="color: aquamarine">Album Name : </span>{{ $album->name }}
+        </span>
+        <br>
         <button class="custom-button">Submit</button>
 
     </form>
