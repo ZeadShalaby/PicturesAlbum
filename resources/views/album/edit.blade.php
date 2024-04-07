@@ -75,7 +75,7 @@
                 </div>
             </div>
 
-            <label class="c-form__toggle" for="start">New Album<span class="c-form__toggleIcon"></span></label>
+            <label class="c-form__toggle" for="start">Edit Album<span class="c-form__toggleIcon"></span></label>
 
         </form>
     </div>
