@@ -7,17 +7,10 @@ trait TestAuth
 
     // todo rules of login for users
     protected function rulesLogin($field){
-      if($field == "email"){
       return [
-        "field"    => "required|exists:users,email",
-        "password" => "required"
-    ];}
-    else{
-      return [
-        "field"    => "required|exists:users,username",
-        "password" => "required"
-    ];
-    }
+        'email' => 'required|email',
+        'password' => 'required|alphaNum|min:3'
+      ];
     }
   
     // todo rules of users registers

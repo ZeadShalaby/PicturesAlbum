@@ -38,6 +38,7 @@
 
                 <li><a href="/albums">Album</a></li>
                 <li><a href="/albums/create">New Album</a></li>
+                <li><a href="/login">login</a></li>
 
                 <li class="services">
                     <a href="/">Services</a>

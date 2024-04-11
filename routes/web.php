@@ -31,6 +31,8 @@ Route::get('/', function () {
         Route::get('/gallery/{id}', [ImagesController::class, 'index'])->name('album.index');
         Route::POST('/gallery/store', [ImagesController::class, 'store'])->name('albums.store');
 
+        Route::GET('/login', [UsersController::class, 'loginindex'])->name('login.index');
+
         //? autocompletesearch 
         Route::GET('/album/search', [AlbumsController::class , "autocompletesearch"]);
 

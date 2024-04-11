@@ -4,21 +4,41 @@ namespace App\Http\Controllers;
 
 use Exception;
 use Validator;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Traits\ResponseTrait;
+use App\Traits\Requests\TestAuth;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
+    use TestAuth ,ResponseTrait;
+
+    function loginindex()
+    {
+        return view('login.login');
+    }
+
     /**
-     * todo check users found or not (login).
+     * @throws ValidationException
      */
-    public function login(Request $request)
+    function login(Request $request)
     {
         //! validation
-        $rules = $this->rulesComment();
+        $rules = $this->rulesLogin();
         $validator = $this->validate($request,$rules);
         if($validator !== true){return $validator;}
 
+        $user_data = array(
+            'email' => $request->get('email'),
+            'password' => $request->get('password')
+        );
+
+        if (!(Auth::attempt($user_data))) {
+            return back()->with('error', 'Wrong Login Details');
+        }
+        else{return redirect('/alpum');}
+        
     }
 
     /**
@@ -31,38 +51,15 @@ class UsersController extends Controller
         $validator = $this->validate($request,$rules);
         if($validator !== true){return $validator;}
 
-    }
+        $user = User::create([
+            'firstname' => $request->firstname,
+            'lastname' => $request ->lastname,
+            'email'=> $request->email,
+            'password'=> $request->password,
+            'photo' => $request ->img
+         ]);  
+         
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
     }
 
     /**
@@ -71,5 +68,12 @@ class UsersController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+
+    function logout()
+    {
+        Auth::logout();
+        return redirect('login');
     }
 }

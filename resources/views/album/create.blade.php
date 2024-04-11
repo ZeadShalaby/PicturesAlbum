@@ -59,6 +59,7 @@
             @csrf
             <div>
                 <div class="c-form__group">
+
                     <label class="c-form__label" for="username">
                         <input type="text" id="username" class="c-form__input" placeholder=" " pattern="[^\s]+"
                             required name="name" />

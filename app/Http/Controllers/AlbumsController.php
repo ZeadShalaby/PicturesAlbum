@@ -52,9 +52,10 @@ class AlbumsController extends Controller
             $code = $this->returnCodeAccordingToInput($validator);
             return $this->returnValidationError($code,$validator);
         }
+ 
          Album::create([
             'name' => $request->name,
-            'user_id' => "2", //auth()->user()->id
+            'user_id' =>2 //auth()->user()->id
              ]);
         return Redirect::route('albums.index')->with('status', 'Create Successfully');
 
